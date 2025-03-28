@@ -55,7 +55,7 @@ function App() {
             ))}
           </ul>
 
-          <h2 className="text-xl font-semibold mb-2">Topic Summary</h2>
+          <h2 className="text-xl font-semibold m-2">Topic Summary</h2>
           <ul className="list-disc list-inside">
             {analytics.topics.map((topic, idx) => (
               <li key={idx}>
