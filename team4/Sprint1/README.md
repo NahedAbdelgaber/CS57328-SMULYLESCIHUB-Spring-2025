@@ -4,4 +4,4 @@ Sprint Outcomes: Implemented the Login and Register functions, but it needs to h
 
 Team Members: Yiyou Pan, Nikolas Z., Cole Colkin, Will Epperly
 
-How to run: Pull the code, start running the cshub database, run the frontend and backend with npm and gradle respectively, and once it's booted up you should be taken to the login page where you can register an account, login after, and alter details (hopefully).
+How to run: RUNNING ON PORT 8081, this is because when setting up Will was running another project on 8080 for his work. Pull the code, start running the cshub database, run the frontend and backend with npm and gradle respectively, and once it's booted up you should be taken to the login page where you can register an account, login after, and alter details in the settings.
