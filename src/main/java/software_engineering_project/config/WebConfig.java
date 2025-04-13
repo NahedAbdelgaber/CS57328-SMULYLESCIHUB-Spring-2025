@@ -1,4 +1,4 @@
-package vincent.software_engineering_project.config;
+package software_engineering_project.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
