@@ -15,3 +15,9 @@ export const addEmployee = async(employee) => {
 export const deleteEmployee = async(id) => {
     return await axios.delete(`${API_URL}/${id}`);
 };
+
+export const postChallenge = async (challengeData) => {
+    // Replace with the correct backend API URL
+    return await axios.post("http://localhost:5000/api/challenges", challengeData);
+  };
+  
