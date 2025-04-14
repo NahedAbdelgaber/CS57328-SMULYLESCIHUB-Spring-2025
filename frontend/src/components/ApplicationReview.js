@@ -10,7 +10,7 @@ const ApplicationReview = () => {
     try {
       const response = await axios.get('http://localhost:8080/api/industry-challenge-proposals');
       // Filter out proposals whose associated challenge is no longer open
-      const pendingProposals = response.data.filter(app => app.challenge && app.challenge.openStatus === true);
+      const pendingProposals = response.data.filter(app => app.challenge);
       setApplications(pendingProposals);
     } catch (error) {
       console.error('Error fetching applications:', error);
