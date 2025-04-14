@@ -41,8 +41,6 @@ public class IndustryChallengeService {
     // Endpoint to populate sample challenges
     public List<IndustryChallenge> populateSampleChallenges() {
         // Clear existing challenges for a clean slate (optional)
-        challengeRepository.deleteAll();
-
         List<IndustryChallenge> sampleChallenges = new ArrayList<>();
 
         // Sample Challenge 1

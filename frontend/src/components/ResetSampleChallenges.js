@@ -9,7 +9,10 @@ const ResetSampleChallenges = () => {
     try {
       // Call the backend endpoint to repopulate sample challenges.
       // Ensure the URL and port match your backend's configuration.
+      await axios.post('http://localhost:8080/api/industry-challenge-proposals/populate');
       await axios.post('http://localhost:8080/api/industry-challenges/populate');
+
+      
       setMessage('Sample challenges have been reset successfully.');
     } catch (error) {
       console.error('Error resetting sample challenges:', error);

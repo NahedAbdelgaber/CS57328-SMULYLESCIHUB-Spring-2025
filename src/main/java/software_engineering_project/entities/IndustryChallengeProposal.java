@@ -15,9 +15,11 @@ public class IndustryChallengeProposal {
     private User applicant;
 
     @OneToOne
-    @JoinColumn(name = "challenge_id", referencedColumnName = "id")
+    @JoinColumn(name = "challenge_id", referencedColumnName = "id", 
+        foreignKey = @ForeignKey(name = "FK10vy0fmuh416fi3fkreaoe014", 
+                                   foreignKeyDefinition = "FOREIGN KEY (challenge_id) REFERENCES industry_challenge(id) ON DELETE CASCADE"))
     private IndustryChallenge challenge;
-
+    
     private String description;
     private Integer price;
     private Date start_date;
