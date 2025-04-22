@@ -1,6 +1,8 @@
 // FacultyPostJob.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
+import FacultyHeader from './FacultyHeader';
 
 const FacultyPostJob = () => {
     // State for course submission
@@ -34,7 +36,7 @@ const FacultyPostJob = () => {
                 headers: { "Content-Type": "application/json" }
             });
             alert('Course added successfully!');
-            // Optionally reset fields
+// Optionally reset fields
             setCourseNumberAdd('');
             setCourseNameAdd('');
             setCourseDescriptionAdd('');
@@ -65,7 +67,7 @@ const FacultyPostJob = () => {
             createdDate: new Date()
         };
         try {
-            await axios.post('http://localhost:8081/api/jobpostings', jobData, {
+            await axios.post('http://localhost:8080/api/jobpostings', jobData, {
                 headers: { "Content-Type": "application/json" }
             });
             alert('Job posted successfully!');
@@ -96,6 +98,8 @@ const FacultyPostJob = () => {
 
     return (
         <div>
+            <FacultyHeader />
+
             <h1>SMU TA Module</h1>
 
             {/* Add Course Section */}
