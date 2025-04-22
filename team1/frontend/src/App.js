@@ -4,7 +4,7 @@ import TechIdeaPortal from "./components/TechIdeaPortal";
 function App() {
     return (
         <div>
-            <h1>Job Portal</h1>
+            <h1>Tech Idea Portal</h1>
             <TechIdeaPortal />
         </div>
     );
