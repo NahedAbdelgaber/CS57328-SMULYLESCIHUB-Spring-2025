@@ -11,9 +11,15 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     networks:
       - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # Spring Boot Backend
   backend:
@@ -22,7 +28,8 @@ services:
       dockerfile: Dockerfile
     container_name: backend
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     environment:
       - MYSQL_URL=jdbc:mysql://mysql:3306/tech_ideas_db?useSSL=false&allowPublicKeyRetrieval=true
       - MYSQL_USER=root
@@ -31,6 +38,7 @@ services:
       - "8080:8080"
     networks:
       - app-network
+    restart: unless-stopped
 
   # React Frontend
   frontend:
@@ -44,10 +52,12 @@ services:
       - backend
     networks:
       - app-network
+    restart: unless-stopped
 
 networks:
   app-network:
     driver: bridge
 
 volumes:
-  mysql_data: 
+  db_data:
+    name: tech_ideas_db_data 
