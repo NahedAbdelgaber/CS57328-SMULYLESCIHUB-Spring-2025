@@ -44,9 +44,7 @@ public class TechIdeaController {
         try {
             TechType[] types = TechType.values();
             logger.info("Retrieved {} tech types: {}", types.length, java.util.Arrays.toString(types));
-            return ResponseEntity.ok()
-                .header("Access-Control-Allow-Origin", "http://localhost:3000")
-                .body(types);
+            return ResponseEntity.ok(types);
         } catch (Exception e) {
             logger.error("Error fetching tech types", e);
             throw e;
