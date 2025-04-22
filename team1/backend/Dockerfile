@@ -4,20 +4,27 @@ FROM openjdk:17-jdk-slim
 # Set working directory
 WORKDIR /app
 
-# Copy Gradle wrapper files
-COPY gradlew .
-COPY gradle gradle
-COPY build.gradle .
-COPY settings.gradle .
+# Install necessary tools
+RUN apt-get update && \
+    apt-get install -y wget unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Gradle
+ENV GRADLE_VERSION=8.5
+RUN wget -q https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip && \
+    unzip gradle-${GRADLE_VERSION}-bin.zip && \
+    rm gradle-${GRADLE_VERSION}-bin.zip && \
+    mv gradle-${GRADLE_VERSION} /opt/gradle
+ENV PATH=$PATH:/opt/gradle/bin
 
 # Copy source code
-COPY src src
+COPY . .
 
 # Build the application
-RUN ./gradlew build -x test
+RUN gradle build -x test
 
 # Expose the port the app runs on
 EXPOSE 8080
 
 # Command to run the application
-CMD ["./gradlew", "bootRun"] 
+CMD ["gradle", "bootRun"] 
