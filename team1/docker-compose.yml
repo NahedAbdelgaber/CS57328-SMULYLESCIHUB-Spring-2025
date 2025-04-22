@@ -46,6 +46,12 @@ services:
     container_name: frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=3000
     depends_on:
       - backend
     networks:

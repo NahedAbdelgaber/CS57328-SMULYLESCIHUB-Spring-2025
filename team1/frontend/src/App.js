@@ -1,10 +1,11 @@
 import React from "react";
-import JobPortal from "./components/JobPortal"; // Ensure correct path
+import TechIdeaPortal from "./components/TechIdeaPortal";
+
 function App() {
     return (
         <div>
             <h1>Job Portal</h1>
-            <JobPortal />
+            <TechIdeaPortal />
         </div>
     );
 }

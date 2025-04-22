@@ -20,10 +20,6 @@ ENV PATH=$PATH:/opt/gradle/bin
 # Copy source code
 COPY . .
 
-# Convert line endings and make gradlew executable
-RUN sed -i 's/\r$//' gradlew && \
-    chmod +x gradlew
-
 # Build the application
 RUN gradle build -x test
 
