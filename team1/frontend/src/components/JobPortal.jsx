@@ -61,8 +61,9 @@ const JobPortal = () => {
         }
     };
 
-    const handleShowJobs = () => {
+    const handleShowJobs = async () => {
         setShowJobs(true);
+        await fetchJobs();
     };
 
     const handleDeleteJob = async (id) => {
