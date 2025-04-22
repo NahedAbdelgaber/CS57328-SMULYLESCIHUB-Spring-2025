@@ -97,21 +97,13 @@ npm start
 
 Enter the name of a company
 
-Enter a job description
+Enter a Tech description
 
-Submit the job
+Submit the Tech idea 
 
-Show Available Jobs
+Show Available Tech ideas
 
 #### What we want to add/change about the system:
-
-We want to rework the system to make it about posting tech ideas, not jobs
-
-The "Job Portal", "Job Submission Portal", "Job Description", "submit job" and "Show available Jobs" should be changed to say:
-
-Tech Idea Portal, Tech Submission Portal, Tech description, Submit tech idea, and show available tech ideas
-
-Company name can be changed to User Name
 
 For adding new features, we brainstormed this user story idea.
 
