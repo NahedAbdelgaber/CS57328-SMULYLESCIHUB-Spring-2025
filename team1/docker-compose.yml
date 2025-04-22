@@ -8,8 +8,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: tech_ideas_db
-    ports:
-      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
     networks:
