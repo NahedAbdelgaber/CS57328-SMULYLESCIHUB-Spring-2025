@@ -14,7 +14,7 @@ services:
       - app-network
     restart: unless-stopped
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -25,7 +25,6 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: backend
-    network_mode: host
     depends_on:
       mysql:
         condition: service_healthy
@@ -45,7 +44,6 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: frontend
-    network_mode: host
     ports:
       - "3000:3000"
     volumes:
@@ -66,4 +64,4 @@ networks:
 
 volumes:
   db_data:
-    name: tech_ideas_db_data
+    name: tech_ideas_db_data 
