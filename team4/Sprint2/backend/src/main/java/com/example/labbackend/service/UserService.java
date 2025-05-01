@@ -15,9 +15,9 @@ public class UserService {
     @Autowired
     private JdbcTemplate jdbc;
 
-    public boolean validateLogin(String usernameOrEmail, String password) {
+    public boolean validateLogin(String identifier, String password) {
         String sql = "SELECT COUNT(*) FROM users WHERE (username = ? OR email = ?) AND password = ?";
-        Integer count = jdbc.queryForObject(sql, Integer.class, usernameOrEmail, usernameOrEmail, password);
+        Integer count = jdbc.queryForObject(sql, Integer.class, identifier, identifier, password);
         return count != null && count > 0;
     }
     
@@ -27,9 +27,9 @@ public class UserService {
         return true;
     }
 
-    public User getUser(String usernameOrEmail) {
+    public User getUser(String identifier) {
         String sql = "SELECT * FROM users WHERE (username = ? OR email = ?)";
-        List<User> users = jdbc.query(sql, new BeanPropertyRowMapper<>(User.class), usernameOrEmail, usernameOrEmail);
+        List<User> users = jdbc.query(sql, new BeanPropertyRowMapper<>(User.class), identifier, identifier);
         return users.isEmpty() ? null : users.get(0);
     }
 
