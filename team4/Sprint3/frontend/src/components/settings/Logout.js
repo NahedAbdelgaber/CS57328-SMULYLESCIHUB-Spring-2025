@@ -5,6 +5,7 @@ export default function LogoutSettings() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('identifier');
+    sessionStorage.removeItem('identifier');
     navigate('/login');
   };
 

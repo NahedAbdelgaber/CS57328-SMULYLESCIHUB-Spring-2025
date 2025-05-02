@@ -5,9 +5,9 @@ import PasswordStrength from '../PasswordStrength';
 
 export default function ResetPassword() {
   const [identifier, setIdentifier] = useState('');
-  const [newPassword, setNewPassword]   = useState('');
-  const [showPwd, setShowPwd]           = useState(false);
-  const [saving, setSaving]             = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [showPwd, setShowPwd] = useState(false);
+  const [saving, setSaving] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async e => {

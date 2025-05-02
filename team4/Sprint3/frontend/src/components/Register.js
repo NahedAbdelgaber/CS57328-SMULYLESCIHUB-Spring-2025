@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import PasswordStrength from './PasswordStrength';
 
 export default function Register() {
-  const [form, setForm]   = useState({
+  const [form, setForm] = useState({
     username: '',
     email: '', 
     password: '',

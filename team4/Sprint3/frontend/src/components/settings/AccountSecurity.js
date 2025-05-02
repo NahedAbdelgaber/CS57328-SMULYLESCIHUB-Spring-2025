@@ -3,12 +3,12 @@ import axios from 'axios';
 import PasswordStrength from '../PasswordStrength';
 
 export default function AccountSecurity() {
-  const identifier        = localStorage.getItem('identifier');
+  const identifier = localStorage.getItem('identifier');
   const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword]         = useState('');
-  const [showCurrent, setShowCurrent]         = useState(false);
-  const [showNew, setShowNew]                 = useState(false);
-  const [saving, setSaving]                   = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [showCurrent, setShowCurrent] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -16,10 +16,7 @@ export default function AccountSecurity() {
     try {
       const payload = identifier.includes('@') ? { email: identifier } : { username: identifier };
 
-      await axios.put(
-        `http://localhost:8081/api/reset/password/${encodeURIComponent(newPassword)}`,
-        payload
-      );
+      await axios.put(`http://localhost:8081/api/reset/password/${encodeURIComponent(newPassword)}`,payload);
       alert('Password changed!');
       setCurrentPassword('');
       setNewPassword('');
