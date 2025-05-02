@@ -7,7 +7,7 @@ Screenshots of our app are in the sprint3/functionality folder
 Set up the environment
 
 ```bash
-docker compose up --build
+cd sprint3 && docker compose up --build
 ```
 
 For future starts run:

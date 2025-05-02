@@ -1,4 +1,3 @@
-
 Screenshots of our app are in the sprint2/functionality folder
 
 ## To Run:
@@ -8,7 +7,7 @@ Screenshots of our app are in the sprint2/functionality folder
 Set up the environment
 
 ```bash
-docker compose up --build
+cd sprint2 && docker compose up --build
 ```
 
 For future starts run:
@@ -102,7 +101,7 @@ Enter the name of a company
 
 Enter a Tech description
 
-Submit the Tech idea 
+Submit the Tech idea
 
 Show Available Tech ideas
 
