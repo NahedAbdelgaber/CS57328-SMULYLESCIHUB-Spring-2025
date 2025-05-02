@@ -1,3 +1,6 @@
+
+Screenshots of our app are in the sprint2/functionality folder
+
 ## To Run:
 
 #### docker setup

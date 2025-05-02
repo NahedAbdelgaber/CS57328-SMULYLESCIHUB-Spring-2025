@@ -1,3 +1,5 @@
+Screenshots of our app are in the sprint3/functionality folder
+
 ## To Run:
 
 #### docker setup
@@ -99,7 +101,7 @@ Enter the name of a company
 
 Enter a Tech description
 
-Submit the Tech idea 
+Submit the Tech idea
 
 Show Available Tech ideas
 

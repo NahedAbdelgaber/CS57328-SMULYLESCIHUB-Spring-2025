@@ -22,3 +22,5 @@ cd sprint1 && cd frontend && npm start
 ```
 
 Navigate to localhost 300 to see the app
+
+Screenshots of our app are in the sprint1/functionality folder
