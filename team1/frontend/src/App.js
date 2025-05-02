@@ -3,8 +3,7 @@ import TechIdeaPortal from "./components/TechIdeaPortal";
 
 function App() {
     return (
-        <div>
-            <h1>Tech Idea Portal</h1>
+        <div className="min-h-screen bg-gray-50">
             <TechIdeaPortal />
         </div>
     );
