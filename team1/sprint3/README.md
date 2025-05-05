@@ -1,3 +1,5 @@
+Screenshots of our app are in the sprint3/functionality folder
+
 ## To Run:
 
 #### docker setup
@@ -5,7 +7,7 @@
 Set up the environment
 
 ```bash
-docker compose up --build
+cd sprint3 && docker compose up --build
 ```
 
 For future starts run:
@@ -99,7 +101,7 @@ Enter the name of a company
 
 Enter a Tech description
 
-Submit the Tech idea 
+Submit the Tech idea
 
 Show Available Tech ideas
 
