@@ -23,8 +23,6 @@ const CompleteChallenge = () => {
     }
   };
   
-  
-
   useEffect(() => {
     fetchActiveChallenges();
   }, []);

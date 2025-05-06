@@ -7,7 +7,6 @@ import software_engineering_project.entities.IndustryChallengeProposal;
 import software_engineering_project.services.IndustryChallengeProposalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import java.util.Map; 
 import java.util.List;
 
 @RestController
@@ -40,6 +39,17 @@ public class IndustryChallengeProposalController {
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("An application has already been accepted for this challenge.");
+        }
+    }
+
+    @PostMapping("/decline/{id}")
+    public ResponseEntity<?> declineProposal(@PathVariable Integer id) {
+        boolean accepted = ICP_Service.declineProposal(id);
+        if (accepted) {
+            return ResponseEntity.ok("Proposal declined successfully.");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Unable to decline the proposal");
         }
     }
 }

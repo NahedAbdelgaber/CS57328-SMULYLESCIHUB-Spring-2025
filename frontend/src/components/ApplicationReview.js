@@ -32,6 +32,19 @@ const ApplicationReview = () => {
     }
   };
 
+  const declineApplication = async (appId) => {
+    try {
+      await axios.post(`http://localhost:8080/api/industry-challenge-proposals/decline/${appId}`);
+      setMessage('You have successfully declined an application. The proposal has been removed from the system');
+      // Refresh the list so that accepted applications are removed.
+      fetchApplications();
+    } catch (error) {
+      console.error('Error declining application:', error);
+      // When the backend returns an error (e.g. duplicate acceptance), display a message.
+      setMessage('Unable to decline the application');
+    }
+  };
+
   // Fetch the proposals when the component mounts
   useEffect(() => {
     fetchApplications();
@@ -68,6 +81,7 @@ const ApplicationReview = () => {
                 </div>
               )}
               <button onClick={() => acceptApplication(app.id)}>Accept Application</button>
+              <button onClick={() => declineApplication(app.id)}>Decline Application</button>
             </li>
           ))}
         </ul>

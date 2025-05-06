@@ -156,7 +156,7 @@ public class IndustryChallengeProposalService {
             IndustryChallengeProposal proposal = optionalProposal.get();
             // Get the challenge associated with this proposal
             IndustryChallenge challenge = proposal.getChallenge();
-            if (challenge != null) {
+            if (challenge != null && challenge.getOpenStatus() == false) {
                 // Set the openStatus to true
                 challenge.setOpenStatus(true);
                 // Save the updated challenge (make sure that IC_Repository is available/injected)
@@ -169,4 +169,13 @@ public class IndustryChallengeProposalService {
     
 
 
+    public boolean declineProposal(Integer id) {
+        Optional<IndustryChallengeProposal> optionalProposal = ICP_Repository.findById(id);
+        if (optionalProposal.isPresent()) {
+            IndustryChallengeProposal proposal = optionalProposal.get();
+            ICP_Repository.delete(proposal);
+            return true;
+        }
+        return false;
+    }
 }
