@@ -1,30 +1,20 @@
-Sprint 2
+Sprint 3
 
-The team implemented some more functionalities in Sprint 2:
+The team implemented some more functionalities in Sprint 3:
 
-1. Update the Login and Registration to now have an email field.
-2. Implement a Forgot Password and Forgot Username function on the login screen.
-3. Make a landing page so you don't just jump to the login screen.
-4. Modify the settings to not be one page anymore, instead a bunch of individual services.
-5. In the settings there is now multiple tabs for updating your details, changing username, changing password, logging out, and deleting your account.
-6. The last change was to apply some basic CSS to make everything fit a little better with some padding/margins and have some additional color to make things look a little more appealing.
+1. The first change in this Sprint was to add a password meter for basic strength functionality. It changes text and color based on how many characters your password is.
+2. The show/hide button for the password to hide visibility while typing the password or not.
+3. Update email preferences to receive notifications via email or not in the settings page.
+4. Alter the delete account to a slow delete functionality that will rather deactivate account, which later could turn into reactivation.
 
 Below are the screenshots as proof of it working:
 
-![Landing Page](image-8.png)
+![Show and Hide Password 1](<Screenshot 2025-05-01 at 7.09.58 PM.png>)
 
-![Successful Registration](image-2.png)
+![Show and Hide Password 2](<Screenshot 2025-05-01 at 7.09.53 PM.png>)
 
-![Login Page](image-4.png)
+![Update Email Preferences 1](image-9.png)
 
-![Password Reset](image.png)
+![Update Email Preferences 2](image-10.png)
 
-![Username Reset](image-1.png)
-
-![Update Details in Settings](image-7.png)
-
-![Username Reset in Settings](image-6.png)
-
-![Password Reset in Settings](image-5.png)
-
-![Delete Account](image-3.png)
+![Create Account with show/hide password, and strength meter](image-12.png)

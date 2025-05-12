@@ -111,12 +111,10 @@ public class UserController {
         if (!exists) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
-
         boolean deleted = userService.deleteUser(identifier);
         if (!deleted) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete user");
         }
-
         return ResponseEntity.ok().build();
     }
 }
